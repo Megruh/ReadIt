@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 
 export default function Header() {
     return (
@@ -8,8 +9,13 @@ export default function Header() {
                 <h2>ReadIt</h2>
             </div>
             <div className="nav-titles">
-                <h3>Home</h3>
-                <h3>My Library</h3>
+                <Link to="/home">
+                    <h3>Home</h3>
+                </Link>
+                <Link to="/library">
+                    <h3>My Library</h3>
+                </Link>
+                <box-icon className="search" name='search-alt'></box-icon>
             </div>
         </nav>
     )
