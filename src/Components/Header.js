@@ -15,7 +15,7 @@ export default function Header() {
                 <Link to="/library">
                     <h3>My Library</h3>
                 </Link>
-                <box-icon className="search" name='search-alt'></box-icon>
+                <box-icon name='search-alt' color="#C4BBAF"></box-icon>
             </div>
         </nav>
     )

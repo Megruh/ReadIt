@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #ffffff;
 }
 
 .header {
@@ -15,15 +16,16 @@
   height: 2.5rem;
   border-radius: 10%;
   margin-right: 5px;
-  color: #C4BBAF
+  color: #C4BBAF;
  }
 
 .nav-titles {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
-.nav-titles > h3 {
+.nav-titles h3 {
   margin: 10px;
   color: #C4BBAF;
 }
@@ -100,7 +102,7 @@ a:-webkit-any-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #C4BBAF;
+  background-color: #A5978B;
   margin-top: 3rem;
   margin-left: 5rem;
   margin-right: 5rem;
@@ -112,7 +114,7 @@ a:-webkit-any-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #C4BBAF;
+  background-color: #A5978B;
   margin-top: 3rem;
   margin-left: 5rem;
   margin-right: 5rem;
@@ -126,7 +128,7 @@ a:-webkit-any-link {
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
-  background-color: #C4BBAF;
+  background-color: #A5978B;
   margin-top: 3rem;
   margin-left: 5rem;
   margin-right: 5rem;
@@ -151,14 +153,14 @@ a:-webkit-any-link {
   justify-content: space-evenly;
 }
 .library-cat {
-  background-color: #C4BBAF;
+  background-color: #A5978B;
   height: 100rem;
   width: 35rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
 
-.library-lists > h2 {
+.library-lists h2 {
   color: #5C4742;
   margin: 0px;
 }
