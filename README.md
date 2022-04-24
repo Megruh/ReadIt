@@ -1,5 +1,5 @@
 Idea: 
-Create a web application that allows users to keep track of books they’ve read and books they want to read, using GoodReads api for book recommendations and searches
+Create a web application that allows users to keep track of books they’ve read and books they want to read, using Google Books api for book recommendations and searches
 
 MVP:
 -Users can login/logout or register for an account
