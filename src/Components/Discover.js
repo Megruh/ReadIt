@@ -11,7 +11,7 @@ export default function Discover() {
 
     useEffect(() => {
         console.log(randomWord)
-        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${randomWord}&maxResults=2`)
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${randomWord}&maxResults=12`)
         .then((res) => {
             let urls = res.data.items.map(book => book?.volumeInfo?.imageLinks?.thumbnail)
             setBookImgs(urls)

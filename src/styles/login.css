@@ -27,14 +27,14 @@
     background-color: dodgerblue;
 } */
 
-.App {
+/* .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh; 
   padding: 1rem 0.5rem;
-}
+} */
 
 .login-box {
     width: 100%;

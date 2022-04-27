@@ -12,7 +12,7 @@ export default function Home() {
     const [bookPics, setBookPics] = useState([])
 
     useEffect(() => {
-        axios.get(`https://www.googleapis.com/books/v1/volumes?q=fiction&maxResults=2`)
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=fiction&maxResults=12`)
         .then((res) => {
             console.log(res.data)
             let urls = res.data.items.map(book => book?.volumeInfo?.imageLinks?.thumbnail)
