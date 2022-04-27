@@ -1,0 +1,11 @@
+.swiper-slide {
+    height: 200px;
+    width: 8rem;
+    margin: 10px;
+}
+
+.swiper-wrapper {
+    display: flex;
+    flex-direction: row;
+    max-width: 150rem;
+}

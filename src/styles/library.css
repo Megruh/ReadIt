@@ -1,0 +1,20 @@
+.library-lists {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .library-cat {
+    background-color: #C4BBAF;
+    height: 100rem;
+    width: 35rem;
+    margin-top: 0rem;
+    margin-bottom: 3rem;
+    margin: 2rem;
+  }
+  
+  .library-lists h2 {
+    color: #5C4742;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }

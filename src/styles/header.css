@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem;
+    margin-top: -1rem;
+    width: 100%;
+    background-color: #5A2A27;
+  }
+   .books-img {
+    mix-blend-mode: multiply;
+    height: 4rem;
+    margin-right: 0px;
+    color: white;
+   }
+  
+  .nav-titles {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .nav-titles h3 {
+    margin: 10px;
+    color: white;
+  }
+  
+  .header-links {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .project-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .search-bar {
+    height: 1rem;
+  }
+  
+  /* .search {
+    color: #C4BBAF;
+    height: 3rem;
+    width: 3rem;
+  } */

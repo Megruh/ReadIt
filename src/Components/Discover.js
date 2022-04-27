@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios"
 import Carousel from "./Carousel";
+import "../styles/carousel.css"
 const randomWords = require('random-words');
 
 export default function Discover() {
@@ -9,9 +10,10 @@ export default function Discover() {
     const [bookImgs, setBookImgs] = useState([])
 
     useEffect(() => {
-        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${randomWord}`)
+        console.log(randomWord)
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${randomWord}&maxResults=2`)
         .then((res) => {
-            let urls = res.data.items.map(book => book.volumeInfo.imageLinks.thumbnail)
+            let urls = res.data.items.map(book => book?.volumeInfo?.imageLinks?.thumbnail)
             setBookImgs(urls)
             setBookList(res.data.items)
         })
