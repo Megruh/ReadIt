@@ -24,7 +24,7 @@ function App() {
         <Route path="/register" element={<Register />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/search/:searchTerm" element={<Search />}/>
-        <Route path="/info" element={<Info />}/>
+        <Route path="/info/:bookId" element={<Info />}/>
       </Routes>
     </Router>
     

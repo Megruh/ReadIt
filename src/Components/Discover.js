@@ -22,7 +22,7 @@ export default function Discover() {
 
     return (
         <div className="discover-box">
-            <Carousel bookImages={bookImgs}/>
+            <Carousel bookImages={bookList}/>
         </div>
     )
 }

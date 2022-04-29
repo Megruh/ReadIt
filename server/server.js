@@ -12,12 +12,12 @@ var corsOptions = {
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   }
 
-app.use(express.static(path.join(__dirname, "..", "build")));
-app.use(express.static("public"));
+// app.use(express.static(path.join(__dirname, "..", "build")));
+// app.use(express.static("public"));
 
-app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, "..", "build", "index.html"));
-});
+// app.use((req, res, next) => {
+//   res.sendFile(path.join(__dirname, "..", "build", "index.html"));
+// });
 
 //app.get('/', controller.landing)
 //app.get('/home', controller.home)

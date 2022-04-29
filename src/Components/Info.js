@@ -8,15 +8,17 @@ export default function Info() {
     const params = useParams()
 
     useEffect(() => {
-        axios.get(`https://www.googleapis.com/books/v1/volumes/${params.info}&maxResults=25`)
+        axios.get(`https://www.googleapis.com/books/v1/volumes/${params.bookId}`)
         .then((res) => {
-            let urls = res.data.items.map(book => book.id)
-            setBookInfo(urls)  
+            console.log(res.data)
+            setBookInfo(res.data)
+            // let urls = res.data.items.map(book => book.id)
+            // setBookInfo(urls)  
         })
     }, [])
     return (
         <div className="info-box">
-           
+           <h1>{bookInfo?.volumeInfo?.title}</h1>
         </div>
     )
 }

@@ -25,6 +25,7 @@ const login = (req, res) => {
         (`SELECT * FROM users`)
       )
       .then(async (dbRes) => {
+          console.log(dbRes)
           const pwdMatch = await bcrypt.compareSync(password, dbRes[0][0].password)
           const usrMatch = username.toLowerCase() === dbRes[0][0].username
         res.status(200).send(dbRes[0][0]);

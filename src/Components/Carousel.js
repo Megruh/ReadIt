@@ -6,8 +6,8 @@ const Carousel = (props) => {
     
   return (
     <div className='carouselContainer'>
-        {props.bookImages.map((image) => {
-            return <img className='carouselImage' onClick={e => window.location.href='/info'} src={image} />
+        {props.bookImages.map((book) => {
+            return <img className='carouselImage' onClick={e => window.location.href=`/info/${book.id}`} src={book?.volumeInfo?.imageLinks?.thumbnail} />
         })}
     </div>
   )
