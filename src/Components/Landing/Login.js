@@ -3,7 +3,7 @@ import AuthContext from "../../context/AuthProvider";
 import "../../styles/login.css"
 
 import axios from 'axios';
-const LOGIN_URL = '/auth';
+const LOGIN_URL = 'http://localhost:3005/api/login';
 
 const Login = () => {
     const { setAuth } = useContext(AuthContext);
@@ -25,7 +25,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        
         try {
             const response = await axios.post(LOGIN_URL,
                 JSON.stringify({ user, pwd }),
@@ -33,7 +33,8 @@ const Login = () => {
                     headers: { 'Content-Type': 'application/json' },
                     withCredentials: true
                 }
-            );
+                );
+                console.log(user)
             console.log(JSON.stringify(response?.data));
             //console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
@@ -96,7 +97,7 @@ const Login = () => {
                         Need an Account?<br />
                         <span className="line">
                             {/*put router link here*/}
-                            <a href="#">Sign Up</a>
+                            <a href="/login">Sign Up</a>
                         </span>
                     </p>
                 </section>

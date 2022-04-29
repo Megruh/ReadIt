@@ -8,7 +8,8 @@ import Library from "./Components/Library/Library"
 import Genres from "./Components/Genres/Genres"
 import Register from "./Components/Landing/Register";
 import Login from "./Components/Landing/Login";
-import MediaCard from "./Components/Library/MediaCard"
+import Search from "./Components/Search";
+import Info from "./Components/Info";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route path="/genre/:genre" element={<Genres />}/>
         <Route path="/register" element={<Register />}/>
         <Route path="/login" element={<Login />}/>
+        <Route path="/search/:searchTerm" element={<Search />}/>
+        <Route path="/info" element={<Info />}/>
       </Routes>
     </Router>
     

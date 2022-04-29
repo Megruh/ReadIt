@@ -37,6 +37,9 @@
       justify-content: flex-start;
       padding: 1rem;
       background-color: #8D5B4C;
+      margin-left: 45rem;
+      margin-right: 45rem;
+      margin-top: 3rem;
   }
 
   .register-box > h1 {

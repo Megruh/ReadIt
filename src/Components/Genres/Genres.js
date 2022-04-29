@@ -7,16 +7,14 @@ export default function Genres() {
     const [genreImg, setGenreImg] = useState([])
     const [genres, setGenres] =useState([])
     const params = useParams()
-     console.log(genres)
-     console.log(genreImg)
-     console.log(params.genre)
+    
     useEffect(() => {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${params.genre}&maxResults=24`)
         .then((res) => {
             console.log(res.data)
             let urls = res.data.items.map(book => book?.volumeInfo?.imageLinks?.thumbnail)
             setGenreImg(urls)
-            // setGenres(res.data.items)
+            setGenres(res.data.items)
         })
     }, [])
     return (

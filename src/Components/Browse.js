@@ -3,8 +3,8 @@ import Genres from "./Genres/Genres"
 import {Link} from "react-router-dom"
 
 export default function Browse() {
-    const genres = ["ammish fiction", "art", "biography", "business", "children's", "christian", "classics", "comics", "contemporary",
-"cookbooks", "crime", "ebooks", "fantasy", "fiction", "gay and lesbian", "graphic novels", "historical fiction", "history", "horror", "humor and comedy", "memoir", "music", "mystery", "nonfiction", "poetry", "psychology", "romance", "science", "science fiction", "self help", "sports", "suspence", "thriller", "travel", "young adult"]
+    const genres = ["AMMISH FICTION", "ART", "BIOGRAPHY", "BUSINESS", "CHILDREN'S", "CHRISTIAN", "CLASSICS", "COMICS", "CONTEMPORARY",
+"COOKBOOKS", "CRIME", "EBOOKS", "FANTASY", "FICTION", "GAY & LESBIAN", "GRAPHIC NOVELS", "HISTORICAL FICTION", "HISTORY", "HORROR", "HUMOR & COMEDY", "MEMOIR", "MUSIC", "MYSTERY", "NONFICTION", "POETRY", "PSYCHOLOGY", "ROMANCE", "SCIENCE", "SCIENCE FICTION", "SELF HELP", "SPORTS", "SUSPENSE", "THRILLER", "TRAVEL", "YOUNG ADULT"]
     return (
         <div className="browse-box">
             {genres.map((genre) => {

@@ -1,9 +1,19 @@
-import React from "react"
-import {Link} from "react-router-dom"
+import React, {useState} from "react"
+import {Link, useNavigate} from "react-router-dom"
 import Search from "./Search"
 import "../styles/header.css"
 
 export default function Header() {
+    const [search, setSearch] = useState('')
+    let navigate = useNavigate()
+
+    const submitSearch = (e) => {
+        let code = e.keyCode || e.which;
+    if(code === 13) { 
+        navigate(`/search/${search}`)
+    } 
+    }
+
     const loggedIn = true
     return (
         <nav className="header">
@@ -21,8 +31,7 @@ export default function Header() {
                     <h3>My Library</h3>
                 </Link>
                 {/* <box-icon name='search-alt' color="#C4BBAF"></box-icon> */}
-                <Search/>
-                <input className="search-bar" placeholder="Search Books..."></input>
+                <input className="search-bar" placeholder="Search Books..." onChange={e => setSearch(e.target.value)} onKeyPress={submitSearch}></input>
             </div>
         </nav>
     )
