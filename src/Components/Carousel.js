@@ -1,14 +1,19 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
 import "../styles/carousel.css"
+import {Link} from "react-router-dom"
 
 const Carousel = (props) => {
-    
   return (
+    <div>
     <div className='carouselContainer'>
-        {props.bookImages.map((book) => {
-            return <img className='carouselImage' onClick={e => window.location.href=`/info/${book.id}`} src={book?.volumeInfo?.imageLinks?.thumbnail} />
+        {props.bookImages.map((book, id) => {
+          let url = `/info/${book.id}` 
+           
+            return <div key={id}>
+            <Link to={url}>  <img className='carouselImage' src={book?.volumeInfo?.imageLinks?.thumbnail} /> </Link> </div>
         })}
+    </div>
     </div>
   )
 };

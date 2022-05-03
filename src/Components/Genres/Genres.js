@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 import "../../styles/genres.css"
 import axios from "axios"
-import { useParams} from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 
 export default function Genres() {
     const [genreImg, setGenreImg] = useState([])
@@ -11,8 +11,7 @@ export default function Genres() {
     useEffect(() => {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${params.genre}&maxResults=24`)
         .then((res) => {
-            console.log(res.data)
-            let urls = res.data.items.map(book => book?.volumeInfo?.imageLinks?.thumbnail)
+            let urls = res.data.items.map((book, id) => book?.volumeInfo?.imageLinks?.thumbnail)
             setGenreImg(urls)
             setGenres(res.data.items)
         })
@@ -21,8 +20,10 @@ export default function Genres() {
         <div className="genres">
             <h2>Books in this Genre:</h2>
             <div className="genre-container">
-            {genreImg.map((image) => {
-                return <img src={image} />
+            {genres.map((book, id) => {
+                let url= `/info/${book.id}`
+                return <div key={id}> 
+                <Link to={url}> <img src={book?.volumeInfo?.imageLinks?.thumbnail} /> </Link>  </div>
             })}
             </div>
         </div>

@@ -9,7 +9,8 @@ CREATE TABLE "users" (
 
 CREATE TABLE "library" (
   "book_id" SERIAL PRIMARY KEY,
-  "good_reads_id" INTEGER NOT NULL,
-  "status" VARCHAR(100) NOT NULL,
+  "google_books_id" VARCHAR(200) NOT NULL,
+  -- wishlist, current, finished
+  "shelf_id"  VARCHAR(100) NOT NULL,
   "user_id" INTEGER NOT NULL REFERENCES users(user_id) ON DELETE CASCADE
 );

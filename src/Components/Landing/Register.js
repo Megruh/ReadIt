@@ -44,6 +44,7 @@ const Register = () => {
         setErrMsg('');
     }, [user, pwd, matchPwd])
 
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         // if button enabled with JS hack
@@ -56,7 +57,21 @@ const Register = () => {
 
         axios.post('http://localhost:3005/api/register', {username: user, password: pwd})
         .then(res => {
-            console.log(res.data)
+            setSuccess(true);
+                //clear state and controlled inputs
+                //need value attrib on inputs for this
+                setUser('');
+                setPwd('');
+                setMatchPwd('');
+            }) .catch ((err) => {
+                if (!err?.response) {
+                    setErrMsg('No Server Response');
+                } else if (err.response?.status === 409) {
+                    setErrMsg('Username Taken');
+                } else {
+                    setErrMsg('Registration Failed')
+                }
+                errRef.current.focus();
         })
         // try {
         //     const response = await axios.post(REGISTER_URL,
@@ -93,7 +108,7 @@ const Register = () => {
                 <section>
                     <h1>Success!</h1>
                     <p>
-                        <a href="/api/login">Sign In</a>
+                        <a href="/login">Sign In</a>
                     </p>
                 </section>
             ) : (

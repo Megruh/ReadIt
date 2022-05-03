@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 import axios from "axios"
 import Carousel from "./Carousel"
 import "../styles/search.css"
-import { useParams} from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 
 export default function Search() {
     const [search, setSearch] = useState('')
@@ -18,11 +18,12 @@ export default function Search() {
             setBookImgs(urls)
             setBookList(res.data.items)
         })
-    }, [])
+    }, [params.searchTerm])
     return(
         <div className="search-container">
-             {bookImgs.map((image, id) => {
-                return <img src={image} key={id} />
+             {bookList.map((book, id) => {
+                 let url= `/info/${book.id}`
+                return <> <Link to={url}> <img src={book?.volumeInfo?.imageLinks?.thumbnail} key={id} /> </Link></>
             })}
         </div>
     )

@@ -7,8 +7,8 @@ export default function Browse() {
 "COOKBOOKS", "CRIME", "EBOOKS", "FANTASY", "FICTION", "GAY & LESBIAN", "GRAPHIC NOVELS", "HISTORICAL FICTION", "HISTORY", "HORROR", "HUMOR & COMEDY", "MEMOIR", "MUSIC", "MYSTERY", "NONFICTION", "POETRY", "PSYCHOLOGY", "ROMANCE", "SCIENCE", "SCIENCE FICTION", "SELF HELP", "SPORTS", "SUSPENSE", "THRILLER", "TRAVEL", "YOUNG ADULT"]
     return (
         <div className="browse-box">
-            {genres.map((genre) => {
-                return <Link to={"/genre/"+ genre}>{genre}</Link>
+            {genres.map((genre, id) => {
+                return <Link to={"/genre/"+ genre} key={id}>{genre}</Link>
             })}
         </div>
     )

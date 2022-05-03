@@ -1,7 +1,7 @@
 .info-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     background-color: #C4BBAF;
@@ -11,4 +11,45 @@
     margin-left: 5rem;
     margin-bottom: 3rem;
     margin-top: 3rem;
+}
+
+.book-title {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 3rem;
+}
+
+.book-author {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 0rem;
+}
+
+.book-pic {
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.book-desc {
+    width: 90rem;
+    margin-top: 2rem;
+}
+
+.book-pages {
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.book-cat {
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.select {
+    width: 12rem;
+    margin-top: 1rem;
+}
+
+button {
+    height: 2rem;
 }

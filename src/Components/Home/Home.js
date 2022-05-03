@@ -10,6 +10,7 @@ export default function Home() {
     // const [randomWord, setRandomWord] = useState(randomWords())
     const [bookList, setBookList] = useState([])
     const [bookPics, setBookPics] = useState([])
+    
 
     useEffect(() => {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=fiction&maxResults=12`)

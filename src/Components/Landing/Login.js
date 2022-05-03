@@ -5,7 +5,7 @@ import "../../styles/login.css"
 import axios from 'axios';
 const LOGIN_URL = 'http://localhost:3005/api/login';
 
-const Login = () => {
+const Login = (props) => {
     const { setAuth } = useContext(AuthContext);
     const userRef = useRef();
     const errRef = useRef();
@@ -28,14 +28,26 @@ const Login = () => {
 
         axios.post('http://localhost:3005/api/login', {username: user, password: pwd})
         .then(response => {
-            console.log(response.data)
+            console.log(response)
+            const {username, user_id} = response.data
             const accessToken = response?.data?.userId
-            setAuth({ user, pwd, accessToken });
+            setAuth({ username, user_id });
                 setUser('');
                 setPwd('');
                 setSuccess(true);
+                props.setLoggedIn(true)
         })
-        
+        .catch ((err) => {
+                if (!err?.response) {
+                    setErrMsg('No Server Response');
+                } else if (err.response?.status === 400) {
+                    setErrMsg('Incorrect Username or Password');
+                } else if (err.response?.status === 401) {
+                    setErrMsg('Unauthorized');
+                } else {
+                    setErrMsg('Login Failed');
+                }
+            })
         // try {
         //     const response = await axios.post(LOGIN_URL,
         //         JSON.stringify({ user, pwd }),
@@ -74,7 +86,7 @@ const Login = () => {
                     <h1>You are logged in!</h1>
                     <br />
                     <p>
-                        <a href="#">Go to Home</a>
+                        <a href="/home">Go to Home</a>
                     </p>
                 </section>
             ) : (
@@ -101,13 +113,13 @@ const Login = () => {
                             value={pwd}
                             required
                         />
-                        <button>Sign In</button>
+                        <button >Sign In</button>
                     </form>
                     <p>
                         Need an Account?<br />
                         <span className="line">
                             {/*put router link here*/}
-                            <a href="/login">Sign Up</a>
+                            <a href="/register">Sign Up</a>
                         </span>
                     </p>
                 </section>

@@ -13,7 +13,6 @@ export default function Discover() {
         console.log(randomWord)
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${randomWord}&maxResults=12`)
         .then((res) => {
-            console.log(res.data.items)
             let urls = res.data.items.map(book => book?.volumeInfo?.imageLinks?.thumbnail)
             setBookImgs(urls)
             setBookList(res.data.items)
