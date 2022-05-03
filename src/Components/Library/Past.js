@@ -1,47 +1,38 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
-import Info from "../Info"
-import {Link} from "react-router-dom"
+import MediaCard from "./MediaCard"
 
 export default function Finished() {
-    const [finishedList, setFinishedlist] = useState([])
     const [books, setBooks] = useState([])
 
-    useEffect(() => {
-        // let books = []
+    const updateComponent = () => {
         axios.get(`http://localhost:3005/library?shelf_id=finished`)
         .then(res => {
-        //     console.log(res.data)
-        //    console.log(books.length)
         setBooks(res.data)
-        // console.log(wishlist)
         })
-    }, [])
+    }
 
     useEffect(() => {
-        let booksArr = []
-        books.forEach( elem => {
-            axios.get(`https://www.googleapis.com/books/v1/volumes/${elem.google_books_id}`)
-            .then(response => {
-                console.log(response.data)
-                booksArr.push(response.data)
-                 // setWishlist([...wishlist, response.data])
+        updateComponent()
+        
+    }, [])
+
+    const deleteBook = (id) => {
+        setBooks(prevState => {
+            let newState = prevState.filter((book, index) => {
+                return book.book_id !== id
             })
+            return newState
         })
-        console.log(booksArr.length)
-        setFinishedlist(booksArr)
-    }, [books])
+    }
+
+    const booksMapped = books.map((book) => {
+        return <MediaCard book={book} shelfId={"finished"} updateComponent={updateComponent} deleteBook={deleteBook}/>
+    })
     
     return (
-        <div>
-            <div>
-            {finishedList.map((book, id) => {
-                console.log(book)
-                let url= `/info/${book.id}`
-                return <div key={id}>
-                <Link to={url}> <img src={book?.volumeInfo?.imageLinks?.thumbnail} /> </Link> </div>
-            })}
-            </div>
+        <div className="library-books">
+            {booksMapped}
         </div>
     )
 }

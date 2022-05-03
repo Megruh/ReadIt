@@ -14,9 +14,14 @@
   align-items: center;
   justify-content: center;
   background-color: #C4BBAF;
-  margin-top: 3rem;
+  margin-top: 0.5rem;
   height: 25rem;
   width: 100%;
+}
+
+.discover-title {
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
 }
 
 .recs-box {
@@ -24,9 +29,14 @@
   align-items: center;
   justify-content: center;
   background-color: #C4BBAF;
-  margin-top: 3rem;
+  margin-top: 0.5rem;
   height: 25rem;
   width: 100%;
+}
+
+.recs-title {
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
 }
 
 .browse-box {
@@ -36,12 +46,17 @@
   flex-wrap: wrap;
   flex-direction: column;
   background-color: #C4BBAF;
-  margin-top: 3rem;
+  margin-top: 0.5rem;
   margin-bottom: 3rem;
   height: 25rem;
   width: 100%;
   box-sizing: border-box;
   padding-top: 1.5rem;
+}
+
+.browse-title {
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
 }
 
 .browse-box a {

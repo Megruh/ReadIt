@@ -7,14 +7,14 @@ const app = express()
 
 app.use(express.json())
 
-app.use(session({
-  resave: false,
-  saveUninitialized: true,
-  secret: process.env.SESSION_SECRET,
-  cookie: {
-      maxAge: 1000 * 60 * 60 * 8
-  }
-}))
+// app.use(session({
+//   resave: false,
+//   saveUninitialized: true,
+//   secret: process.env.SESSION_SECRET,
+//   cookie: {
+//       maxAge: 1000 * 60 * 60 * 8
+//   }
+// }))
 
 var corsOptions = {
     origin: '*',
@@ -22,21 +22,14 @@ var corsOptions = {
   }
 
 app.use(cors(corsOptions))
-// app.use(express.static(path.join(__dirname, "..", "build")));
-// app.use(express.static("public"));
-
-// app.use((req, res, next) => {
-//   res.sendFile(path.join(__dirname, "..", "build", "index.html"));
-// });
 
 
 app.post('/library', controller.library)
 app.get('/library', controller.libShelves)
-// app.get('/genre/:genre', controller.genre)
+app.delete('/library', controller.deleteBook)
 app.post('/api/register', controller.register)
 app.post('/api/login', controller.login)
 app.get('/api/user', controller.user)
-//app.get('/search/:searchTerm', controller.search)
 
 const port = process.env.PORT || 3005
 

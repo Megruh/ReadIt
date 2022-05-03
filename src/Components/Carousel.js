@@ -1,5 +1,4 @@
 import React from 'react';
-import Swiper from 'react-id-swiper';
 import "../styles/carousel.css"
 import {Link} from "react-router-dom"
 

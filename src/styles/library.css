@@ -11,10 +11,48 @@
     margin-top: 0rem;
     margin-bottom: 3rem;
     margin: 2rem;
+    display: flex;
+    align-items: flex-start;
   }
   
   .library-lists h2 {
     color: #5C4742;
     margin-bottom: 1rem;
     margin-top: 2rem;
+  }
+
+  .media-delete-btn {
+    height: 1.5rem;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+  }
+
+  .library-books {
+    margin-top: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  .media-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .media-card-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    align-items: flex-start;
+  }
+
+  .media-card-p {
+    margin-top: 0rem;
+  }
+
+  .media-card-img {
+    margin-bottom: 3rem;
   }

@@ -5,7 +5,7 @@
     align-items: center;
     flex-wrap: wrap;
     background-color: #C4BBAF;
-    height: 50rem;
+    height: 60rem;
     width: 110rem;
     margin-right: 5rem;
     margin-left: 5rem;
@@ -16,7 +16,7 @@
 .book-title {
     margin-left: 4rem;
     margin-right: 4rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 .book-author {
@@ -28,11 +28,12 @@
 .book-pic {
     margin-left: 4rem;
     margin-right: 4rem;
+    margin-top: 0rem;
 }
 
 .book-desc {
-    width: 90rem;
-    margin-top: 2rem;
+    width: 95rem;
+    margin-top: 1rem;
 }
 
 .book-pages {
@@ -48,8 +49,4 @@
 .select {
     width: 12rem;
     margin-top: 1rem;
-}
-
-button {
-    height: 2rem;
 }

@@ -1,6 +1,6 @@
 import React from "react"
 import "../../styles/library.css"
-import Future from "./Future"
+import Wishlist from "./Wishlist"
 import Current from "./Current"
 import Finished from "./Past"
 
@@ -10,7 +10,7 @@ export default function Library () {
             <div>
                 <h2>Want to Read:</h2>
                 <div className="library-cat">
-                <Future />
+                <Wishlist />
                 </div>
             </div>
 

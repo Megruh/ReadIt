@@ -10,7 +10,6 @@ export default function Discover() {
     const [bookImgs, setBookImgs] = useState([])
 
     useEffect(() => {
-        console.log(randomWord)
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${randomWord}&maxResults=12`)
         .then((res) => {
             let urls = res.data.items.map(book => book?.volumeInfo?.imageLinks?.thumbnail)
@@ -20,8 +19,11 @@ export default function Discover() {
     }, [])
 
     return (
-        <div className="discover-box">
-            <Carousel bookImages={bookList}/>
+        <div>
+            <h2 className="discover-title">Discover New Titles:</h2>
+            <div className="discover-box">
+                <Carousel bookImages={bookList}/>
+            </div>
         </div>
     )
 }

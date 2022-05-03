@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect, useContext } from 'react';
 import AuthContext from "../../context/AuthProvider";
 import "../../styles/login.css"
-
 import axios from 'axios';
 const LOGIN_URL = 'http://localhost:3005/api/login';
 
@@ -28,7 +27,6 @@ const Login = (props) => {
 
         axios.post('http://localhost:3005/api/login', {username: user, password: pwd})
         .then(response => {
-            console.log(response)
             const {username, user_id} = response.data
             const accessToken = response?.data?.userId
             setAuth({ username, user_id });
@@ -48,35 +46,6 @@ const Login = (props) => {
                     setErrMsg('Login Failed');
                 }
             })
-        // try {
-        //     const response = await axios.post(LOGIN_URL,
-        //         JSON.stringify({ user, pwd }),
-        //         {
-        //             headers: { 'Content-Type': 'application/json' },
-        //             withCredentials: true
-        //         }
-        //         );
-        //         console.log(user)
-        //     console.log(JSON.stringify(response?.data));
-        //     //console.log(JSON.stringify(response));
-        //     const accessToken = response?.data?.accessToken;
-        //     const roles = response?.data?.roles;
-        //     setAuth({ user, pwd, roles, accessToken });
-        //     setUser('');
-        //     setPwd('');
-        //     setSuccess(true);
-        // } catch (err) {
-        //     if (!err?.response) {
-        //         setErrMsg('No Server Response');
-        //     } else if (err.response?.status === 400) {
-        //         setErrMsg('Missing Username or Password');
-        //     } else if (err.response?.status === 401) {
-        //         setErrMsg('Unauthorized');
-        //     } else {
-        //         setErrMsg('Login Failed');
-        //     }
-        //     errRef.current.focus();
-        // }
     }
 
     return (
@@ -118,7 +87,6 @@ const Login = (props) => {
                     <p>
                         Need an Account?<br />
                         <span className="line">
-                            {/*put router link here*/}
                             <a href="/register">Sign Up</a>
                         </span>
                     </p>

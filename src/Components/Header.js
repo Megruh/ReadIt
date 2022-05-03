@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react"
 import {Link, useNavigate} from "react-router-dom"
-import Search from "./Search"
 import "../styles/header.css"
 import axios from "axios"
 
@@ -27,8 +26,6 @@ export default function Header(props) {
         axios.get('http://localhost:3005/api/user')
         .then(res => console.log(res.data))
     }, [])
-    // console.log(loggedIn)
-    // setLoggedIn(props.isLoggedIn)
 
     return (
         <nav className="header">
@@ -44,7 +41,6 @@ export default function Header(props) {
                     <h3>My Library</h3>
                 </Link></>
                 : isLoggedIn}
-                {/* <box-icon name='search-alt' color="#C4BBAF"></box-icon> */}
                 <input className="search-bar" placeholder="Search Books..." onChange={e => setSearch(e.target.value)} onKeyPress={submitSearch}></input>
             </div>
         </nav>
